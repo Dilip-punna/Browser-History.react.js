@@ -1,4 +1,4 @@
-import History from './components/History'
+import History from './component/History'
 
 import './App.css'
 

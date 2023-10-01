@@ -82,7 +82,7 @@ const initialHistoryList = [
 class History extends Component {
   state = {
     searchInput: '',
-    isShow: false,
+
     HistoryList: initialHistoryList,
   }
 
@@ -100,13 +100,10 @@ class History extends Component {
 
     this.setState({HistoryList: filterUserData})
     console.log(filterUserData.length)
-    if (filterUserData.length === 1) {
-      this.setState({isShow: true})
-    }
   }
 
   render() {
-    const {searchInput, HistoryList, isShow} = this.state
+    const {searchInput, HistoryList} = this.state
 
     const searchResults = HistoryList.filter(eachUser =>
       eachUser.title.toLowerCase().includes(searchInput.toLowerCase()),
@@ -121,11 +118,18 @@ class History extends Component {
               <span>
                 <img
                   src="https://assets.ccbp.in/frontend/react-js/history-website-logo-img.png"
-                  alt="History Logo"
+                  alt="app logo"
+                  value="search"
                 />
               </span>
               ry
             </h1>
+            <div>
+              <img
+                src="https://assets.ccbp.in/frontend/react-js/search-img.png "
+                alt="search"
+              />
+            </div>
             <input
               type="search"
               placeholder="search history"
